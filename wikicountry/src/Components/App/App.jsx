@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import Header from '../Header/Header';
-import Results from '../Results/Results';
-import Information from '../Information/Information';
+import Results from '../Components-Homepage/Results/Results';
+import Information from '../Components-DetailPage/Information/Information';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {

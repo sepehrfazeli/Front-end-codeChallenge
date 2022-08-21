@@ -1,0 +1,116 @@
+.Information {
+    z-index: 1;
+    margin: 5rem 3rem 0 3rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10rem;
+  }
+  .navbar {
+    display: flex;
+    padding-left: 2rem;
+    padding-right: 1rem;
+    justify-content: space-between;
+    margin-bottom: 5%;
+  }
+  .navbar button {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.232);
+    border: white solid 1px;
+    border-radius: 7px;
+    width: 140px;
+    height: 40px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar button:hover{
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.354);
+  }
+  .flaginfo {
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: row;
+  }
+  .flaginfo img {
+    aspect-ratio: 16/9;
+    height: 40vh;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.354);
+  }
+  .flaginfo .info {
+    height: auto;
+    width: 50%;
+    padding: 1rem;
+    padding-left: 2rem;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .flaginfo h4 {
+    line-height: 4rem;
+  }
+  .flaginfo .detail {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.6rem;
+  }
+  .flaginfo ul {
+    width: 50%;
+    font-size: small;
+  }
+  .flaginfo .refers {
+    margin-top: 2rem;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .flaginfo h5 {
+    width: 10rem;
+    font-size: small;
+  }
+  .flaginfo .links {
+    padding-left: 2rem;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-rows: 3vw;
+    grid-template-columns: repeat(auto-fit, 7vw);
+    grid-auto-rows: 3vw;
+    grid-auto-columns: repeat(3, 7vw);
+    gap: 1rem;
+  }
+  .flaginfo .links button {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.232);
+    border: white solid 1px;
+    font-size: 1vw;
+    border-radius: 7px;
+    background-color: white;
+  }
+  
+  .flaginfo .links button:hover {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.354);
+  }
+  
+  @media only screen and (max-width: 1000px) {
+    .flaginfo {
+      padding-left: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .flaginfo .detail {
+      flex-direction: column;
+    }
+    .flaginfo .refers {
+      flex-direction: column;
+    }
+    .flaginfo h5 {
+      width: auto;
+      margin-bottom: 29%;
+    }
+  }
+  

@@ -1,7 +1,7 @@
 import React from 'react';
 // import { render } from 'react-dom';
 import { createRoot } from 'react-dom/client';
-import App from './../App';
+import App from '../App';
 import { act } from 'react-dom/test-utils';
 // eslint-disable-next-line no-unused-vars
 import { render } from '@testing-library/react';
