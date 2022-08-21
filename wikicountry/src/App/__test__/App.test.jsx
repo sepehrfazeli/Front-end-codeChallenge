@@ -1,8 +1,9 @@
 import React from 'react';
 // import { render } from 'react-dom';
 import { createRoot } from 'react-dom/client';
-import App from '../App';
+import App from './../App';
 import { act } from 'react-dom/test-utils';
+// eslint-disable-next-line no-unused-vars
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
@@ -28,7 +29,7 @@ it('should render without crashing', () => {
   // root.unmount();
 });
 
-it('should render App correctly', () => { 
-  const {getByTestId} = render(<App/>);
-  expect(getByTestId('App-test')).toHaveTextContent('g');
-});
+// it('should render App correctly', () => { 
+//   const {getByTestId} = render(<App/>);
+//   expect(getByTestId('App-test')).toHaveTextContent('g');
+// });
