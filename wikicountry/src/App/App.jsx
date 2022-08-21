@@ -1,11 +1,20 @@
 import React from 'react';
 import './App.css';
 import Header from '../Header/Header';
+import Results from '../Results/Results';
+import Information from '../Information/Information';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App" data-testid="App-test">
-      <Header />
+      <Router>
+        <Header />
+        <Routes>
+          <Route index element={<Results />}></Route>
+          <Route path="/information" element={<Information/>}></Route>
+        </Routes>
+      </Router>
     </div>
   );
 }
