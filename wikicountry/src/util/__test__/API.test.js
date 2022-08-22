@@ -1,25 +1,9 @@
 // import React from 'react';
 // import { createRoot } from 'react-dom/client';
-import {
-  API
-} from '../API';
+import { API } from '../API';
 // import { act } from 'react-dom/test-utils';
 import '@testing-library/jest-dom/extend-expect';
 
-
-let container;
-
-beforeEach(() => {
-  container = document.createElement('div');
-  document.body.appendChild(container);
-});
-
-
-
-afterEach(() => {
-  document.body.removeChild(container);
-  container = null;
-});
 
 
 
@@ -70,4 +54,38 @@ it('search function works correctly', async () => {
 it('codesToNames function works correctly', async () => {
   const countries = await API.codesToNames(['ger','col','pe','at']);
   expect(countries).toEqual([ 'Austria', 'Peru', 'Germany', 'Colombia' ]);
+});
+
+
+
+it('showDetail function works correctly', async () => {
+  const country = await API.showDetail(['Germany']);
+  expect(country).toEqual(
+    {
+      'Borders': [
+        'Belgium',
+        'Czechia',
+        'Austria',
+        'France',
+        'Luxembourg',
+        'Denmark',
+        'Switzerland',
+        'Poland',
+        'Netherlands',
+      ],
+      'Capital':  [
+        'Berlin',
+      ],
+      'Currencies': undefined,
+      'Languages':  [
+        'German',
+      ],
+      'Population':expect.any(String),
+      'Region': 'Europe',
+      'Subregion': 'Western Europe',
+      'Tld': '.de',
+      'flag': 'https://flagcdn.com/w320/de.png',
+      'name': 'Germany',
+      'nativeName': 'Deutschland',
+    });
 });

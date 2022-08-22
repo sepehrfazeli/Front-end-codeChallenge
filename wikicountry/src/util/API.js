@@ -96,7 +96,6 @@ export const API = {
         return country.name.common;
 
       });
-      console.log(countries);
       return countries;
     } catch (error) {
       console.error(error);
