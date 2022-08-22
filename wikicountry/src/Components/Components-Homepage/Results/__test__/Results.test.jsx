@@ -1,8 +1,8 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import Results from '../Results';
-// import { act } from 'react-dom/test-utils';
-// import { render } from '@testing-library/react';
+import { act } from 'react-dom/test-utils';
+import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 
@@ -24,9 +24,17 @@ afterEach(() => {
 
 
 it('should render without crashing', () => {
-  // act(() => {
-  createRoot(container).render(<Results />);
-  // });
+  act(() => {
+    createRoot(container).render(<Results />);
+  });
+});
+
+
+it('should CardList be visible without crashing', () => { 
+
+  const {getByTestId} = render(<Results/>);
+  expect(getByTestId('Results-test')).toBeVisible();
+
 });
 
 
