@@ -2,7 +2,7 @@ const axios = require('axios').default;
 
 
 
-export const Api = {
+export const API = {
 
   async init(REGION = 'all') {
 
@@ -13,15 +13,15 @@ export const Api = {
       const response = await axios.get(endpoint);
       let top = Math.floor(Math.random() * (response.data.length - 20) + 20);
       const res = response.data.slice(top - 20, top);
-      
+
       return res.map(results => ({
         name: results.name.common,
         Population: new Intl.NumberFormat().format(results.population),
         Region: results.region,
-        Capital: results.capital,
+        Capital: results.capital ? results.capital : [''],
         flag: results.flags.png,
       }));
-      
+
 
     } catch (error) {
       console.error(error);
@@ -41,44 +41,67 @@ export const Api = {
         Capital: results.capital[0],
         flag: results.flags.png,
       }));
-      
+
 
     } catch (error) {
       console.error(error);
     }
   },
 
-  async namesFinder(codes) {
+  // async namesFinder(codes) {
 
-    try {
+  //   try {
 
-      codes = typeof (codes) === 'string' ? [codes] : codes;
+  //     codes = typeof (codes) === 'string' ? [codes] : codes;
+  //     const res = await Promise.all(codes.map(async (x) => {
+  //       const response = await this.nameFinder(x).then((Results) => {
+  //         return Results;
+  //       });
+  //       return response;
+  //     }));
+  //     console.log(res);
+  //     return res;
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // },
 
-      return await Promise.all(codes.map(async (x) => {
-        const response = await this.nameFinder(x).then((Results) => {
-          return Results;
-        });
-        return response;
-      }));
+  // async nameFinder(code) {
 
-    } catch (error) {
-      console.error(error);
-    }
-  },
+  //   const endpoint = `https://restcountries.com/v3.1/alpha/${code}`;
 
-  async nameFinder(code) {
+  //   try {
+  //     const response = await axios.get(endpoint);
+  //     const res = await response.data[0].name.common;
+  //     return res;
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // },
 
-    const endpoint = `https://restcountries.com/v3.1/alpha/${code}`;
+  async codesToNames(codes) {
+
+
+    codes = typeof (codes) === 'string' ? [codes] : codes;
+    let codesString = '';
+    codes.forEach(x => {
+      codesString += `${x},`;
+    });
+
+    const endpoint = `https://restcountries.com/v3.1/alpha?codes=${codesString}`;
 
     try {
       const response = await axios.get(endpoint);
-      const res = await response.data[0].name.common;
-      return res;
+      const countries = response.data.map(country => {
+        return country.name.common;
+
+      });
+      console.log(countries);
+      return countries;
     } catch (error) {
       console.error(error);
     }
   },
-
 
   async showDetail(name) {
 
@@ -87,8 +110,8 @@ export const Api = {
     try {
       const response = await axios.get(endpoint);
       const res = response.data[0];
-      const borders = await this.namesFinder(res.borders);
-      
+      const borders = await this.codesToNames(res.borders);
+
       return {
         flag: res.flags.png,
         name: res.name.common,
