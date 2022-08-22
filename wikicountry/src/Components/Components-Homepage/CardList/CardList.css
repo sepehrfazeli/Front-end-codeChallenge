@@ -1,0 +1,11 @@
+.CardList {
+    height: auto;
+    grid-area: cards;
+    display: grid;
+    gap: 75px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 263px);
+    grid-template-rows: repeat(auto-fit, 337px);
+    grid-auto-rows: 337px;
+    grid-auto-columns: repeat(4, 337px);
+  }
