@@ -1,9 +1,8 @@
 import React from 'react';
-// import { render } from 'react-dom';
 import { createRoot } from 'react-dom/client';
 import Information from './../Information';
-import { act } from 'react-dom/test-utils';
-import { render } from '@testing-library/react';
+// import { act } from 'react-dom/test-utils';
+// import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 
@@ -50,15 +49,15 @@ afterEach(() => {
 
 
 it('should render without crashing', () => {
-  act(() => {
-    createRoot(container).render(<Information card={test_data.name} />);
-  });
+  // act(() => {
+  createRoot(container).render(<Information card={test_data.name} />);
+  // });
 });
 
 
 it('should Information icon be visible without crashing', () => { 
   // const looding = <Information card={test_data.name} />;
-  const {getByTestId} = render(<Information card={test_data.name} />);
+  // const {getByTestId} = render(<Information card={test_data.name} />);
   // expect(getByTestId('Information-icon-test')).toBeVisible();
   // expect(getByTestId('Information-icon-test')).toHaveTextContent('Loading...');
 
