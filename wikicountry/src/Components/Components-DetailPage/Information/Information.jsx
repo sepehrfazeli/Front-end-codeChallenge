@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { UilArrowLeft } from '@iconscout/react-unicons';
 import './Information.css';
 import { Link } from 'react-router-dom';
-import { Api } from '../../../util/API';
+import { API } from '../../../util/API';
 
 
 function Information(props) {
@@ -13,7 +13,7 @@ function Information(props) {
   console.log(searchResults);
 
   useEffect(() => {
-    Api.showDetail(props.card).then((searchResults) => {
+    API.showDetail(props.card).then((searchResults) => {
       setsearchRestults(searchResults);
     });
   }, [props.card]);
