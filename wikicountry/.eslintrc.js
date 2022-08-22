@@ -16,7 +16,8 @@ module.exports = {
     'sourceType': 'module'
   },
   'plugins': [
-    'react'
+    'react',
+    'react-hooks'
   ],
   'rules': {
     'quotes': ['error', 'single'],
@@ -25,7 +26,10 @@ module.exports = {
     // we use 2 spaces to indent our code
     'indent': ['error', 2],
     // we want to avoid extraneous spaces
-    'no-multi-spaces': ['error']
+    'no-multi-spaces': ['error'],
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
+    "react/prop-types": "off"
   }
 
 };
