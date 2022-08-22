@@ -51,6 +51,26 @@ afterEach(() => {
 
 it('should render without crashing', () => {
   act(() => {
-    createRoot(container).render(<Information/>);
+    createRoot(container).render(<Information card={test_data.name} />);
   });
 });
+
+
+it('should Information icon be visible without crashing', () => { 
+  // const looding = <Information card={test_data.name} />;
+  const {getByTestId} = render(<Information card={test_data.name} />);
+  // expect(getByTestId('Information-icon-test')).toBeVisible();
+  // expect(getByTestId('Information-icon-test')).toHaveTextContent('Loading...');
+
+});
+
+// it('should render Information h1 correctly', () => { 
+//   const {getByTestId} = render(<Information/>);
+//   expect(getByTestId('Information-h1-test')).toHaveTextContent('Where in the world?');
+// });
+
+
+// it('should render Information p correctly', () => { 
+//   const {getByTestId} = render(<Information/>);
+//   expect(getByTestId('Information-p-test')).toHaveTextContent('Dark Mode');
+// });
