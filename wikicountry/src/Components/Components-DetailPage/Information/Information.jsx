@@ -41,29 +41,33 @@ function Information(props) {
   try {
     return (
       <div className="Information">
-        <div className="navbar">
-          <Link to="/" className="back">
-            <button>
-              <UilArrowLeft data-testid="Information-icon-test" size="20" color="#0000004d" /> Back
-            </button>
-          </Link>
+        <div className='navbox'>
+          <div className="navbar">
+            <Link to="/" className="back">
+              <button>
+                <UilArrowLeft data-testid="Information-icon-test" size="20" color="#0000004d" /> Back
+              </button>
+            </Link>
+          </div>
         </div>
         <div className="flaginfo">
-          <img src={searchResults.flag} alt="" />
+          <div className='image'>
+            <img src={searchResults.flag} alt="" />
+          </div>
           <div className="info">
             <h4> {searchResults.name} </h4>
             <div className="detail">
               <ul>
-                <li> Native Name: {searchResults.nativeName} </li>
-                <li> Population: {searchResults.Population} </li>
-                <li> Region: {searchResults.Region} </li>
-                <li> Sub Region: {searchResults.Subregion} </li>
-                <li> Capital: {searchResults.Capital} </li>
+                <li><em> Native Name: </em>{searchResults.nativeName} </li>
+                <li>  <em>  Population: </em>{searchResults.Population} </li>
+                <li>  <em>  Region: </em>{searchResults.Region} </li>
+                <li>  <em>  Sub Region: </em>{searchResults.Subregion} </li>
+                <li>  <em>  Capital: </em>{searchResults.Capital} </li>
               </ul>
               <ul>
-                <li> Top Level Domain: {searchResults.Tld} </li>
-                <li> Currencies: {searchResults.Currencies} </li>
-                <li> Languages: {searchResults.Languages} </li>
+                <li>  <em>  Top Level Domain: </em>{searchResults.Tld} </li>
+                <li>  <em>  Currencies: </em>{searchResults.Currencies} </li>
+                <li>  <em>  Languages: </em>{searchResults.Languages} </li>
               </ul>
             </div>
             <div className="refers">

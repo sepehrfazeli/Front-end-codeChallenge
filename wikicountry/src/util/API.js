@@ -82,15 +82,15 @@ export const API = {
   async codesToNames(codes) {
 
 
-    codes = typeof (codes) === 'string' ? [codes] : codes;
-    let codesString = '';
-    codes.forEach(x => {
-      codesString += `${x},`;
-    });
-
-    const endpoint = `https://restcountries.com/v3.1/alpha?codes=${codesString}`;
-
     try {
+      codes = typeof (codes) === 'string' ? [codes] : codes;
+      let codesString = '';
+      codes.forEach(x => {
+        codesString += `${x},`;
+      });
+
+      const endpoint = `https://restcountries.com/v3.1/alpha?codes=${codesString}`;
+
       const response = await axios.get(endpoint);
       const countries = response.data.map(country => {
         return country.name.common;

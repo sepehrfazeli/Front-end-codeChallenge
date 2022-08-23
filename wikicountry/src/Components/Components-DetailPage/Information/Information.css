@@ -1,18 +1,24 @@
 .Information {
     z-index: 1;
-    margin: 5rem 3rem 0 3rem;
+    margin: 5rem 0 0 0;
     display: flex;
+    align-items: center;
     flex-direction: column;
     margin-bottom: 10rem;
-  }
-  .Information .navbar {
+}
+.Information .navbox {
+    width: 100%;
     display: flex;
-    padding-left: 2rem;
-    padding-right: 1rem;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 5%;
-  }
-  .Information .navbar button {
+}
+.Information .navbar {
+    display: flex;
+    width: 90%;
+    justify-content: flex-start;
+}
+.Information .navbar button {
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.232);
     border: white solid 1px;
@@ -23,94 +29,105 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .Information .navbar button:hover{
+}
+.Information .navbar button:hover {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.354);
-  }
-  .Information .flaginfo {
-    padding-left: 1rem;
+}
+.Information .flaginfo {
+    width: 90%;
     display: flex;
-    flex-direction: row;
-  }
-  .Information .flaginfo img {
-    aspect-ratio: 16/9;
-    height: 40vh;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.354);
-  }
-  .Information .flaginfo .info {
-    height: auto;
+    justify-content: space-between;
+}
+.Information .flaginfo .image {
     width: 50%;
-    padding: 1rem;
-    padding-left: 2rem;
+}
+.Information .flaginfo img {
+    aspect-ratio: 16/9;
+    width: 100%;
+    /* height: 40vh; */
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.354);
+}
+.Information .flaginfo .info {
     color: black;
+    width: 45%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
-  }
-  .Information .flaginfo h4 {
-    line-height: 4rem;
-  }
-  .Information .flaginfo .detail {
+    justify-content: flex-start;
+}
+.Information .flaginfo h4 {
+    margin-bottom: 2%;
+}
+.Information .flaginfo .detail {
     width: 100%;
     display: flex;
     justify-content: space-between;
     line-height: 1.6rem;
-  }
-  .Information .flaginfo ul {
+}
+.Information .flaginfo ul {
     width: 50%;
+    font-weight: 300;
     font-size: small;
-  }
-  .Information .flaginfo .refers {
+}
+.Information .flaginfo ul em {
+    font-weight: 600;
+}
+.Information .flaginfo .refers {
     margin-top: 2rem;
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: flex-start;
-  }
-  .Information .flaginfo h5 {
+}
+.Information .flaginfo h5 {
     width: 10rem;
-    font-size: small;
-  }
-  .Information .flaginfo .links {
-    padding-left: 2rem;
+    /* font-size: small; */
+}
+.Information .flaginfo .links {
     width: 100%;
     height: auto;
-    display: grid;
-    grid-template-rows: 3vw;
-    grid-template-columns: repeat(auto-fit, 7vw);
-    grid-auto-rows: 3vw;
-    grid-auto-columns: repeat(3, 7vw);
-    gap: 1rem;
-  }
-  .Information .flaginfo .links button {
+    display: flex;
+    flex-wrap: wrap;
+}
+.Information .flaginfo .links button {
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.232);
     border: white solid 1px;
-    font-size: 1vw;
+    /* font-size: 1vw; */
+    padding: 1%;
+    margin: 1%;
     border-radius: 7px;
     background-color: white;
-  }
-  
-  .Information .flaginfo .links button:hover {
+}
+
+.Information .flaginfo .links button:hover {
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.354);
-  }
-  
-  @media only screen and (max-width: 1000px) {
-    .flaginfo {
-      padding-left: 1rem;
-      display: flex;
-      flex-direction: column;
+}
+
+@media only screen and (max-width: 375px) {
+    .Information .flaginfo .image {
+        width: 100%;
     }
-    .flaginfo .detail {
-      flex-direction: column;
+    .Information .flaginfo {
+        display: flex;
+        flex-direction: column;
+        margin-top: 7%;
     }
-    .flaginfo .refers {
-      flex-direction: column;
+    .Information .flaginfo .info {
+        margin-top: 7%;
+        width: auto;
     }
-    .flaginfo h5 {
-      width: auto;
-      margin-bottom: 29%;
+    .Information .flaginfo .detail {
+        flex-direction: column;
     }
-  }
-  
+    .Information .flaginfo .refers {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .Information .flaginfo h5 {
+        width: auto;
+    }
+    .Information .flaginfo .links {
+        margin-top: 4%;
+    }
+}
