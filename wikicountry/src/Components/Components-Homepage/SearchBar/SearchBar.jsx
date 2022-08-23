@@ -10,6 +10,11 @@ function SearchBartest(props) {
   function handleTermChange(e) {
     setTerm(e.target.value);
   }
+  function handleKeyPress(e) {
+    if (e.key === 'Enter') {
+      search();
+    }
+  }
 
   function search() {
     props.onSearch(term);
@@ -24,6 +29,7 @@ function SearchBartest(props) {
       />
       <input
         onChange={handleTermChange}
+        onKeyPress={handleKeyPress}
         className="searchbox"
         placeholder="Search for a country..."
       ></input>
