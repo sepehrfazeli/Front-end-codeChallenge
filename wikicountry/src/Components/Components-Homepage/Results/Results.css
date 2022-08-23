@@ -1,7 +1,7 @@
 .Results {
     height: 100vh;
     z-index: 1;
-    margin: 5rem 3rem 0 3rem;
+    margin: 5rem 0 0 0;
     display: grid;
     grid-template: auto 1fr / 1fr;
     grid-template-areas:
@@ -10,19 +10,27 @@
     gap: 3rem;
     margin-bottom: 10rem;
 }
-.navbar {
+.Results .navbox {
     display: flex;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    /* padding: 0 2rem 0 2rem; */
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     grid-area: nav;
 }
+.Results .navbar {
+    display: flex;
+
+    width: 90%;
+
+    /* padding: 0 2rem 0 2rem; */
+    align-items: center;
+    justify-content: space-between;
+}
 @media only screen and (max-width: 930px) {
-    .searchbar {
+    .Results .searchbar {
         margin-bottom: 2rem;
     }
-    .navbar {
+    .Results .navbar {
         align-items: flex-start;
         justify-content: space-between;
         flex-direction: column;

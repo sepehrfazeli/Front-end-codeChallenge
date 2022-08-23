@@ -28,12 +28,12 @@
     justify-content: center;
   }
   .Card h4 {
-    font-size: 1.4vw;
+    /* font-size: 1.4vw; */
+    font-weight: 600;
     margin-bottom: 1vh;
   }
   .Card li {
     line-height: 1.3rem;
-    font-size: 1vw;
     font-weight: 300;
   }
   

@@ -10,7 +10,7 @@ function Information(props) {
   
   const [searchResults, setsearchRestults] = useState(null);
   
-  console.log(searchResults);
+  
 
   useEffect(() => {
     API.showDetail(props.card).then((searchResults) => {

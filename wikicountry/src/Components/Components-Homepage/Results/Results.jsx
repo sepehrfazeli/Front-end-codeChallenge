@@ -1,10 +1,9 @@
-import React, { useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './Results.css';
 import SearchBar from '../SearchBar/SearchBar';
 import FilterBar from '../FilterBar/FilterBar';
 import { API } from '../../../util/API';
 import CardList from '../CardList/CardList';
-
 
 function Results(props) {
   const [searchResults, setsearchResults] = useState(null);
@@ -14,13 +13,13 @@ function Results(props) {
       setsearchResults(searchResults);
     });
   }, []);
-  
+
   function search(name) {
     API.search(name).then((searchResults) => {
       setsearchResults(searchResults);
     });
   }
-  
+
   function filter(region) {
     region = region !== 'Filter by Region' ? region : 'all';
     API.init(region).then((searchResults) => {
@@ -29,7 +28,13 @@ function Results(props) {
   }
   try {
     return (
-      <div data-testid='Results-test' className="Results">
+      <div data-testid="Results-test" className="Results">
+        <div className="navbox">
+          <div className="navbar">
+            <SearchBar onSearch={search} />
+            <FilterBar onfilter={filter} />
+          </div>
+        </div>
         <div className="navbar">
           <SearchBar onSearch={search} />
           <FilterBar onfilter={filter} />
