@@ -35,10 +35,6 @@ function Results(props) {
             <FilterBar onfilter={filter} />
           </div>
         </div>
-        <div className="navbar">
-          <SearchBar onSearch={search} />
-          <FilterBar onfilter={filter} />
-        </div>
         <CardList
           isRemoval={false}
           onAdd={props.onAdd}
